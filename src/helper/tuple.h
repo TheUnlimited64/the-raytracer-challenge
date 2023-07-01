@@ -47,4 +47,6 @@ Tuple normalizeTuple(Tuple a);
 f32_t dotTuple(Tuple a, Tuple b);
 
 Tuple crossTuple(Tuple a, Tuple b);
+
+Tuple mulTuple(Tuple a, Tuple b);
 #endif //THE_RAYTRACER_CHALLANGE_TUPLE_H

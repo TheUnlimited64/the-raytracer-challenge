@@ -21,8 +21,12 @@ static inline Color mulColorScalar(Color a, f32_t scalar) {
     return mulScalarTuple(a, scalar);
 }
 
-static inline Color mulColor(Color a, Color b){
-    //TODO
+static inline Color mulColor(Color a, Color b) {
+    return mulTuple(a, b);
+}
+
+static inline Color hamadProduct(Color a, Color b) {
+    return mulColor(a, b);
 }
 
 

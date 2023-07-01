@@ -71,3 +71,7 @@ f32_t dotTuple(Tuple a, Tuple b) {
 Tuple crossTuple(Tuple a, Tuple b) {
     return createVector(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
 }
+
+Tuple mulTuple(Tuple a, Tuple b) {
+    Tuple tmp = {a.x * b.x, a.y * b.y, a.z * b.z, a.w * b.w};
+}
