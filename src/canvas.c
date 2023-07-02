@@ -9,6 +9,12 @@ bool isInBounds(Canvas canvas, int16_t x, int16_t y) {
     if (y >= canvas.height) {
         return false;
     }
+    if (y < 0) {
+        return false;
+    }
+    if (x < 0) {
+        return false;
+    }
     return true;
 }
 
@@ -19,7 +25,7 @@ Canvas createCanvas(int16_t width, int16_t height) {
         perror("Error allocating canvas:");
         exit(-1);
     }
-    for (int i = 0; i < width; i++) {
+    for (int i = 0; i < height; i++) {
         canvas[i] = calloc(width, sizeof(Color));
         if (canvas[i] == NULL) {
             perror("Error allocating canvas:");

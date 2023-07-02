@@ -17,4 +17,7 @@ void writePixel(Canvas canvas, int16_t x, int16_t y, Color color);
 
 Color readPixel(Canvas canvas, int16_t x, int16_t y);
 
+bool isInBounds(Canvas canvas, int16_t x, int16_t y);
+
+
 #endif //THE_RAYTRACER_CHALLANGE_CANVAS_H

@@ -24,5 +24,11 @@ static inline bool equalF32(f32_t a, f32_t b) {
     equalF64(a, b);
 }
 
+static inline f32_t clampF32(f32_t value, f32_t lower, f32_t upper) {
+    f32_t res = value > lower ? value : lower;
+    res = res < upper ? res : upper;
+    return res;
+}
+
 
 #endif //THE_RAYTRACER_CHALLANGE_FLOATINGPOINT_H

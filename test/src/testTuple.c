@@ -1,6 +1,8 @@
 #include "unity.h"
 #include "../../src/helper/tuple.h"
 #include "../../src/color.h"
+#include "../../src/canvas.h"
+#include "../../src/ppmWriter.h"
 
 void setUp(void) {
     // set stuff up here
@@ -96,6 +98,16 @@ void testCrossTuple(void) {
     TEST_ASSERT_TRUE(equalTuple(res, expected));
 }
 
+void testPPMWriter(void) {
+    Canvas canvas = createCanvas(10, 2);
+    for (int16_t y = 0; y < canvas.height; y++) {
+        for (int16_t x = 0; x < canvas.width; x++) {
+            writePixel(canvas, x, y, (Color) {1, 0.8f, 0.6f});
+        }
+    }
+    writeCanvasToPPM(canvas,"foo.ppm");
+}
+
 // not needed when using generate_test_runner.rb
 int main(void) {
     UNITY_BEGIN();
@@ -110,5 +122,6 @@ int main(void) {
     RUN_TEST(testNormalization);
     RUN_TEST(testMagnitudeOfNormalizedVector);
     RUN_TEST(testCrossTuple);
+    RUN_TEST(testPPMWriter);
     return UNITY_END();
 }
