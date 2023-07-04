@@ -4,7 +4,7 @@
 
 #ifndef THE_RAYTRACER_CHALLANGE_PPMWRITER_H
 #define THE_RAYTRACER_CHALLANGE_PPMWRITER_H
-#include "canvas.h"
+#include "../canvas.h"
 
 void writeCanvasToPPM(Canvas canvas, char* filename);
 

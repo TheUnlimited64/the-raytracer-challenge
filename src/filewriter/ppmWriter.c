@@ -10,7 +10,7 @@ struct PPMPixel {
 };
 
 
-struct PPMPixel convertColor(Color color) {
+struct PPMPixel convertToColor(Color color) {
     struct PPMPixel tmp;
     tmp.r = (uint8_t) clampF32(color.x * 255, 0, 255);
     tmp.g = (uint8_t) clampF32(color.y * 255, 0, 255);
@@ -44,12 +44,14 @@ void writeCanvasToPPM(Canvas canvas, char *filename) {
     int currentLineWidth = 0;
     for (int16_t y = 0; y < canvas.height; y++) {
         for (int16_t x = 0; x < canvas.width; x++) {
-            currentPixel = convertColor(readPixel(canvas, x, y));
+            currentPixel = convertToColor(readPixel(canvas, x, y));
             currentLineWidth = writeSingleColor(fp, currentLineWidth, currentPixel.r);
             currentLineWidth = writeSingleColor(fp, currentLineWidth, currentPixel.g);
             currentLineWidth = writeSingleColor(fp, currentLineWidth, currentPixel.b);
         }
-        fprintf(fp, "\n");
+        if (currentLineWidth != 0) {
+            fprintf(fp, "\n");
+        }
         currentLineWidth = 0;
     }
     fclose(fp);
