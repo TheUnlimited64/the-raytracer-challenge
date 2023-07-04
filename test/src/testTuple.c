@@ -2,7 +2,7 @@
 #include "../../src/helper/tuple.h"
 #include "../../src/color.h"
 #include "../../src/canvas.h"
-#include "../../src/ppmWriter.h"
+#include "../../src/filewriter/ppmWriter.h"
 
 void setUp(void) {
     // set stuff up here

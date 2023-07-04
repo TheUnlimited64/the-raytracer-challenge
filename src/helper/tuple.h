@@ -15,6 +15,9 @@ typedef struct Tuple {
     f32_t w;
 } Tuple, PTuple; //TODO think about using some kind of abstraction for vector, like polymorphism
 
+#define Vector Tuple
+#define Point Tuple
+
 
 Tuple createVector(f32_t x, f32_t y, f32_t z);
 

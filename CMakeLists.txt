@@ -14,13 +14,13 @@ add_executable(tests
         src/helper/tuple.c
         src/helper/tuple.h
         src/color.h
-        src/canvas.c src/canvas.h src/helper/defines.h src/ppmWriter.c src/ppmWriter.h)
+        src/canvas.c src/canvas.h src/helper/defines.h src/filewriter/ppmWriter.c src/filewriter/ppmWriter.h src/filewriter/bmpWriter.c src/filewriter/bmpWriter.h)
 add_executable(the_raytracer_challange main.c
         src/helper/tuple.c
         src/helper/tuple.h
         src/helper/floatingpoint.h
         src/color.h
-        src/canvas.c src/canvas.h src/helper/defines.h src/ppmWriter.c src/ppmWriter.h)
+        src/canvas.c src/canvas.h src/helper/defines.h src/filewriter/ppmWriter.c src/filewriter/ppmWriter.h src/filewriter/bmpWriter.c src/filewriter/bmpWriter.h)
 
 
 # Include the source files directly for the test target

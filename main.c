@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "src/canvas.h"
-#include "src/ppmWriter.h"
+#include "src/filewriter/ppmWriter.h"
+#include "src/filewriter/bmpWriter.h"
 
 struct Projectile {
     Tuple position;
@@ -23,7 +24,7 @@ struct Projectile tick(struct Environment env, struct Projectile projectile) {
 }
 
 int main() {
-    Canvas canvas = createCanvas(900, 550);
+    Canvas canvas = createCanvas(10000, 10000);
     Tuple start = createPoint(0, 1, 0);
     Tuple velocity = mulColorScalar(normalizeTuple(createVector(1, 1.8f, 0)), 11.25f);
 
@@ -37,6 +38,7 @@ int main() {
         int y = canvas.height - projectile.position.y;
         fellOutOfBounds = !isInBounds(canvas, x, y);
     }
-    writeCanvasToPPM(canvas, "firstSimulation.ppm");
+    //writeCanvasToPPM(canvas, "firstSimulation.ppm");
+    writeCanvasToBmp(canvas, "firstSimulation.bmp");
     return 0;
 }
