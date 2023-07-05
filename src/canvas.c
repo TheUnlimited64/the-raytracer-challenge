@@ -19,9 +19,9 @@ Canvas createCanvas(uint16_t width, uint16_t height) {
         perror("Error allocating canvas:");
         exit(-1);
     }
-    for (int i = 0; i < height; i++) {
-        canvas[i] = calloc(width, sizeof(Color));
-        if (canvas[i] == NULL) {
+    for (int y = 0; y < height; y++) {
+        canvas[y] = calloc(width, sizeof(Color));
+        if (canvas[y] == NULL) {
             perror("Error allocating canvas:");
             exit(-1);
         }

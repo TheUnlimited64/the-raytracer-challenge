@@ -18,4 +18,12 @@ Color readPixel(Canvas canvas, uint16_t x, uint16_t y);
 
 bool isInBounds(Canvas canvas, uint16_t x, uint16_t y);
 
+static inline void destroyCanvas(Canvas *canvas) {
+    for (int y = 0; y < canvas->height; y++) {
+        free(canvas->canvas[y]);
+    }
+    free(canvas->canvas);
+    canvas->canvas = NULL;
+}
+
 #endif

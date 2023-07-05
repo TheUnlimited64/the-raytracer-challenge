@@ -15,16 +15,16 @@ struct Environment {
 
 struct Projectile tick(struct Environment env, struct Projectile projectile) {
     const f32_t resolution = 0.01f;
-    projectile.velocity = mulScalarTuple(projectile.velocity,resolution);
-    env.wind = mulScalarTuple(env.wind,resolution);
+    projectile.velocity = mulScalarTuple(projectile.velocity, resolution);
+    env.wind = mulScalarTuple(env.wind, resolution);
     env.gravity = mulColorScalar(env.gravity, resolution);
     Tuple position = addTuple(projectile.position, projectile.velocity);
-    Tuple velocity = addTuple(divScalarTuple(projectile.velocity,resolution), addTuple(env.gravity, env.wind));
+    Tuple velocity = addTuple(divScalarTuple(projectile.velocity, resolution), addTuple(env.gravity, env.wind));
     return (struct Projectile) {position, velocity};
 }
 
 int main() {
-    Canvas canvas = createCanvas(10  , 10);
+    Canvas canvas = createCanvas(10, 10);
     Tuple start = createPoint(0, 1, 0);
     Tuple velocity = mulColorScalar(normalizeTuple(createVector(1, 1.8f, 0)), 11.25f);
 
@@ -40,5 +40,6 @@ int main() {
     }
     //writeCanvasToPPM(canvas, "firstSimulation.ppm");
     writeCanvasToBmp(canvas, "firstSimulation.bmp");
+    destroyCanvas(&canvas);
     return 0;
 }
