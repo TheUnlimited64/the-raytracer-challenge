@@ -6,18 +6,18 @@
 #include "helper/defines.h"
 
 typedef struct Canvas {
-    int16_t width;
-    int16_t height;
+    uint16_t width;
+    uint16_t height;
     Color **canvas;
 } Canvas;
 
-Canvas createCanvas(int16_t width, int16_t height);
+Canvas createCanvas(uint16_t width, uint16_t height);
 
-void writePixel(Canvas canvas, int16_t x, int16_t y, Color color);
+void writePixel(Canvas canvas, uint16_t x, uint16_t y, Color color);
 
-Color readPixel(Canvas canvas, int16_t x, int16_t y);
+Color readPixel(Canvas canvas, uint16_t x, uint16_t y);
 
-bool isInBounds(Canvas canvas, int16_t x, int16_t y);
+bool isInBounds(Canvas canvas, uint16_t x, uint16_t y);
 
 
 #endif //THE_RAYTRACER_CHALLANGE_CANVAS_H

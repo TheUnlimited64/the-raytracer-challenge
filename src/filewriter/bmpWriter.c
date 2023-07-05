@@ -90,7 +90,8 @@ void convertCanvas(struct BitmapData bitmapData, Canvas canvas) {
 }
 
 int32_t calculatePixelDataSize(uint16_t width, uint16_t height) {
-    return (int32_t) (ceilf((((sizeof(struct BitmapPixel) * 8) * (f32_t) width) / 32.f)) * 4.f) * height;
+    int32_t rowSize = width*4;
+    return rowSize*height;
 }
 
 struct BitmapFileHeader createBitmapFileHeader(uint16_t width, uint16_t height) {

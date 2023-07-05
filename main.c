@@ -24,7 +24,7 @@ struct Projectile tick(struct Environment env, struct Projectile projectile) {
 }
 
 int main() {
-    Canvas canvas = createCanvas(10000, 10000);
+    Canvas canvas = createCanvas(10  , 10);
     Tuple start = createPoint(0, 1, 0);
     Tuple velocity = mulColorScalar(normalizeTuple(createVector(1, 1.8f, 0)), 11.25f);
 
