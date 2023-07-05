@@ -4,13 +4,13 @@
 #include "src/filewriter/bmpWriter.h"
 
 struct Projectile {
-    Tuple position;
-    Tuple velocity;
+    Point position;
+    Vector velocity;
 };
 
 struct Environment {
-    Tuple gravity;
-    Tuple wind;
+    Vector gravity;
+    Vector wind;
 };
 
 struct Projectile tick(struct Environment env, struct Projectile projectile) {
@@ -32,7 +32,7 @@ int main() {
     struct Environment environment = {createVector(0, -0.1f, 0), createVector(-0.01f, 0, 0)};
     bool fellOutOfBounds = false;
     while (!fellOutOfBounds) {
-        writePixel(canvas, projectile.position.x, canvas.height - projectile.position.y, (Color) {1, 1, 1});
+        writePixel(canvas, projectile.position.x, canvas.height - projectile.position.y, WHITE);
         projectile = tick(environment, projectile);
         int x = projectile.position.x;
         int y = canvas.height - projectile.position.y;

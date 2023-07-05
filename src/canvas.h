@@ -1,9 +1,8 @@
-#ifndef THE_RAYTRACER_CHALLANGE_CANVAS_H
-#define THE_RAYTRACER_CHALLANGE_CANVAS_H
+#ifndef THE_RAYTRACER_CHALLENGE_CANVAS_H
+#define THE_RAYTRACER_CHALLENGE_CANVAS_H
 
 #include "color.h"
 #include "stdint.h"
-#include "helper/defines.h"
 
 typedef struct Canvas {
     uint16_t width;
@@ -19,5 +18,4 @@ Color readPixel(Canvas canvas, uint16_t x, uint16_t y);
 
 bool isInBounds(Canvas canvas, uint16_t x, uint16_t y);
 
-
-#endif //THE_RAYTRACER_CHALLANGE_CANVAS_H
+#endif
