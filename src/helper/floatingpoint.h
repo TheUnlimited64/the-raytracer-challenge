@@ -1,9 +1,5 @@
-//
-// Created by theun on 30.06.2023.
-//
-
-#ifndef THE_RAYTRACER_CHALLANGE_FLOATINGPOINT_H
-#define THE_RAYTRACER_CHALLANGE_FLOATINGPOINT_H
+#ifndef THE_RAYTRACER_CHALLENGE_FLOATINGPOINT_H
+#define THE_RAYTRACER_CHALLENGE_FLOATINGPOINT_H
 
 #include <stdbool.h>
 #include <math.h>
@@ -21,7 +17,7 @@ static inline bool equalF64(f64_t a, f64_t b) {
 }
 
 static inline bool equalF32(f32_t a, f32_t b) {
-    equalF64(a, b);
+    return equalF64(a, b);
 }
 
 static inline f32_t clampF32(f32_t value, f32_t lower, f32_t upper) {
@@ -31,4 +27,4 @@ static inline f32_t clampF32(f32_t value, f32_t lower, f32_t upper) {
 }
 
 
-#endif //THE_RAYTRACER_CHALLANGE_FLOATINGPOINT_H
+#endif
