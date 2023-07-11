@@ -3,6 +3,7 @@
 #include <math.h>
 #include <malloc.h>
 #include <stdlib.h>
+#include "../helper/defines.h"
 
 struct BitmapFileHeader {
     uint8_t bfType[2];
@@ -68,7 +69,7 @@ void writeCanvasToBmp(Canvas canvas, char *filename) {
 void writeToFile(struct BitmapData bitmapData, char *filename) {
 
     FILE *fp = fopen(filename, "w+");
-    if (fp == NULL) {
+    if (fp == nullptr) {
         perror("Cannot write file");
         exit(-1);
     }

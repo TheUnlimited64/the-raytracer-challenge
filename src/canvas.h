@@ -3,7 +3,8 @@
 
 #include "color.h"
 #include "stdint.h"
-
+#include "helper/defines.h"
+#include <stdlib.h>
 typedef struct Canvas {
     uint16_t width;
     uint16_t height;
@@ -23,7 +24,7 @@ static inline void destroyCanvas(Canvas *canvas) {
         free(canvas->canvas[y]);
     }
     free(canvas->canvas);
-    canvas->canvas = NULL;
+    canvas->canvas = nullptr;
 }
 
 #endif

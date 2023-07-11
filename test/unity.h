@@ -33,7 +33,7 @@ void tearDown(void);
 
 /* These functions are intended to be called at the beginning and end of an
  * entire test suite.  suiteTearDown() is passed the number of tests that
- * failed, and its return value becomes the exit code of main(). If using
+ * failed, and its return value becomes the exit code of testTuple(). If using
  * Unity directly, you're in charge of calling these if they are desired.
  * If using Ceedling or the test runner generator, these will be called
  * automatically if they exist. */

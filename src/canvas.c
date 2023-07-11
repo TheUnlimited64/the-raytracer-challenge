@@ -1,6 +1,7 @@
 #include <malloc.h>
 #include <stdlib.h>
 #include "canvas.h"
+#include "helper/defines.h"
 
 bool isInBounds(Canvas canvas, uint16_t x, uint16_t y) {
     if (x >= canvas.width) {
@@ -13,15 +14,15 @@ bool isInBounds(Canvas canvas, uint16_t x, uint16_t y) {
 }
 
 Canvas createCanvas(uint16_t width, uint16_t height) {
-    Canvas tmp = {width, height, NULL};
+    Canvas tmp = {width, height, nullptr};
     Color **canvas = malloc(height * sizeof(Color *));
-    if (canvas == NULL) {
+    if (canvas == nullptr) {
         perror("Error allocating canvas:");
         exit(-1);
     }
     for (int y = 0; y < height; y++) {
         canvas[y] = calloc(width, sizeof(Color));
-        if (canvas[y] == NULL) {
+        if (canvas[y] == nullptr) {
             perror("Error allocating canvas:");
             exit(-1);
         }

@@ -2,6 +2,7 @@
 #include "src/canvas.h"
 #include "src/filewriter/ppmWriter.h"
 #include "src/filewriter/bmpWriter.h"
+#include "src/helper/matrix.h"
 
 struct Projectile {
     Point position;
@@ -23,8 +24,8 @@ struct Projectile tick(struct Environment env, struct Projectile projectile) {
     return (struct Projectile) {position, velocity};
 }
 
-int main() {
-    Canvas canvas = createCanvas(10, 10);
+int main(int argc, char** argv) {
+    Canvas canvas = createCanvas(1000, 1000);
     Tuple start = createPoint(0, 1, 0);
     Tuple velocity = mulColorScalar(normalizeTuple(createVector(1, 1.8f, 0)), 11.25f);
 
@@ -41,5 +42,8 @@ int main() {
     //writeCanvasToPPM(canvas, "firstSimulation.ppm");
     writeCanvasToBmp(canvas, "firstSimulation.bmp");
     destroyCanvas(&canvas);
+
+    mulMatrix(4,4,EMPTY_MATRIX4, 4,4, EMPTY_MATRIX4, EMPTY_MATRIX2);
+
     return 0;
 }

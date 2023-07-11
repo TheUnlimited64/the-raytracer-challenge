@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../helper/defines.h"
 
 struct PPMPixel {
     uint8_t r;
@@ -33,7 +34,7 @@ int writeSingleColor(FILE *fp, int currentLineWidth, uint8_t color) {
 
 void writeCanvasToPPM(Canvas canvas, char *filename) {
     FILE *fp = fopen(filename, "w+");
-    if (fp == NULL) {
+    if (fp == nullptr) {
         perror("Could not open file: ");
         exit(-1);
     }
